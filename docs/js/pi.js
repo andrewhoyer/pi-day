@@ -1,6 +1,10 @@
 $(document).ready(function() {
 	
-	var digitPosition = 0;
+	let gamestatus = "active";
+	
+	let digitPosition = 0;
+	
+	let pi = [3,1,4,1,5,9,2,6,5,3];
 	
 	// The Reset button is pressed
 	$("#reset").click(function() {
@@ -11,18 +15,37 @@ $(document).ready(function() {
 			$(this).html("?");
 		});
 		
+		$(".digit").each(function(index) {
+			$(this).css("background-color", "#cccccc");
+		});
+		
+		
 		$(".period p").html(".");
+		
+		gamestatus = "active";
+		
+		$("#message").html("Enter each digit of π in order!");
 		
 	});
 
 	// Any of the number buttons is pressed
 	$(".keys").click(function() {
-		console.log($(this).attr("id"));
+		if (gamestatus == "active") {
 		
-		$("#p" + digitPosition + " p").html($(this).attr("id"));
+			//console.log($(this).attr("id"));
+			console.log(pi[digitPosition]);
+			console.log($(this).attr("id"));
+			if (pi[digitPosition] == $(this).attr("id")) {
+				$("#p" + digitPosition).css("background-color","#008000");
+			} else {
+				$("#p" + digitPosition).css("background-color","#800000");
+				$("#message").html("Uh oh! Digit " + (digitPosition + 1) + " of π is " + pi[digitPosition] + "!");
+				gamestatus = "stopped";
+			}
+			$("#p" + digitPosition + " p").html($(this).attr("id"));
 		
-		digitPosition++;
-		
+			digitPosition++;
+		}
 	});	
 
-}); 
+});
