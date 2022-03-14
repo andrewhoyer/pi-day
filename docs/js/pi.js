@@ -16,11 +16,12 @@ $(document).ready(function() {
 		});
 		
 		$(".digit").each(function(index) {
-			$(this).css("background-color", "#cccccc");
+			$(this).css("background-color", "rgb(72, 72, 72)");
 		});
 		
 		
 		$(".period p").html(".");
+		$(".period").css("background-color", "rgb(72, 72, 72)");
 		
 		gamestatus = "active";
 		
@@ -32,16 +33,41 @@ $(document).ready(function() {
 	$(".keys").click(function() {
 		if (gamestatus == "active") {
 		
-			//console.log($(this).attr("id"));
-			console.log(pi[digitPosition]);
-			console.log($(this).attr("id"));
 			if (pi[digitPosition] == $(this).attr("id")) {
 				$("#p" + digitPosition).css("background-color","#008000");
+				
+				if (digitPosition == 0) {
+					$(".period").css("background-color", "#008000");
+				}
+				
+				if (digitPosition == 9) {
+					$("#message").html("Nice, you got all 10!");
+					gamestatus = "stopped";
+					$("#reset").css("background-image", "linear-gradient(to bottom, #21db21, #008000)");
+				}
+				
+
+				
 			} else {
 				$("#p" + digitPosition).css("background-color","#800000");
-				$("#message").html("Uh oh! Digit " + (digitPosition + 1) + " of π is " + pi[digitPosition] + "!");
+				$("#reset").css("background-image", "linear-gradient(to bottom, #21db21, #008000)");
+				
+				let suffix = "th";
+				
+				if (digitPosition == 0) {
+					suffix = "st";
+				} else if (digitPosition == 1) {
+					suffix = "nd";
+				} else if (digitPosition == 2) {
+					suffix = "rd";
+				}
+				
+				$("#message").html("Uh oh! The " + (digitPosition + 1) + suffix + " digit of π is " + pi[digitPosition] + ". Try again!");
+				
 				gamestatus = "stopped";
+				
 			}
+			
 			$("#p" + digitPosition + " p").html($(this).attr("id"));
 		
 			digitPosition++;
