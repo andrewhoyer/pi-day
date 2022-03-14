@@ -19,9 +19,10 @@ $(document).ready(function() {
 			$(this).css("background-color", "rgb(72, 72, 72)");
 		});
 		
-		
 		$(".period p").html(".");
 		$(".period").css("background-color", "rgb(72, 72, 72)");
+		
+		$("#reset").css("background-image", "linear-gradient(to bottom, #919191, #545454)");
 		
 		gamestatus = "active";
 		
