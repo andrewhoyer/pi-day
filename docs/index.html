@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Test your knowledge of Pi, and learn the first ten digits." />
-    <title>π Day: How many digits of π do you know?</title>
-    <!-- Favicon icons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://andrewhoyer.github.io/pi-day/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://andrewhoyer.github.io/pi-day/"
-    />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-	<link href="css/style.css" rel="stylesheet" type='text/css' media='all'>	
-	
-	<script src="lib/jquery-3.6.0.min.js"></script>
-	<script defer src="js/pi.js" ></script>
-    
-  </head>
-  <body>
-    <noscript>JavaScript must be enabled.</noscript>
-    <div id="cover"></div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Test your knowledge of Pi, and learn the first ten digits." />
+		<title>π Day: How many digits of π do you know?</title>
+		<!-- Favicon icons -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="https://andrewhoyer.github.io/pi-day/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="https://andrewhoyer.github.io/pi-day/"
+		/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link href="css/style.css" rel="stylesheet" type='text/css' media='all'>
+		<script defer src="js/$.js"></script>
+		<script defer src="js/pi.js" ></script>
+	</head>
+	<body>
+		<noscript>JavaScript must be enabled.</noscript>
+		<div id="cover"></div>
 		<div id="main">
-	
 			<h1>π Day: The Game</h1>
-	
 			<p class="desc">Test your memory, and learn the first 10 digits of π!</p>
-		
 			<div class="digits">
 				<div class="digit" id="p0"><p>?</p></div>
 				<div class="digit period"><p>.</p></div>
@@ -47,25 +42,17 @@
 				<div class="digit" id="p8"><p>?</p></div>
 				<div class="digit" id="p9"><p>?</p></div>
 			</div>
-		
 			<p id="message">Enter each digit of π in order!</p>
-
 			<div class="buttons">
 				<div class="button" id="reset"><p>Restart</p></div>
 				<a target="_blank" href="https://twitter.com/intent/tweet?text=How many digits of Pi do you know? Test your skill with %27π Day%3A The Game%27.&url=https%3A%2F%2Fandrewhoyer.github.io%2Fpi-day%2F&hashtags=piday,piday2023&via=andrewhoyer"><div class="button" id="share-twitter"><p>📢 Twitter</p></div></a>
 			</div>
-		
 			<div class="keypad">
 				<div class="keys" id="1"><p>1</p></div><div class="keys" id="2"><p>2</p></div><div class="keys" id="3"><p>3</p></div><div class="keys" id="4"><p>4</p></div><div class="keys" id="5"><p>5</p></div><div class="keys" id="6"><p>6</p></div><div class="keys" id="7"><p>7</p></div><div class="keys" id="8"><p>8</p></div><div class="keys" id="9"><p>9</p></div><div class="keys" id="0"><p>0</p></div>
-			</div>    	
-			
+			</div>
 			<div class="footer">
 				Created by <a href="https://andrewhoyer.com" target="_blank">Andrew Hoyer</a> (<a href="https://twitter.com/andrewhoyer" target="_blank">@andrewhoyer</a>). Project is open source on <a href="https://github.com/andrewhoyer/pi-day" target="_blank">GitHub</a>.
 			</div>
-		
 		</div>
-
-    
-    
   </body>
 </html>
